@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { test, describe, before } from 'mocha';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import * as path from "path";
 
 let page: any;
 
@@ -9,7 +10,7 @@ describe('Ejemplo de integración con Google Sheets', () => {
 
     before(async () => {
         // Carga las credenciales de la hoja de cálculo de Google Sheets
-        const creds = require('../resources/google-sheet-credentials.json');
+        const creds = path.join(__dirname,'../resources/google-sheet-credentials.json');
         const { GoogleAuth } = require('google-auth-library');
 
         const auth = new GoogleAuth({

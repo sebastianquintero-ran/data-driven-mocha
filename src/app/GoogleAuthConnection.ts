@@ -1,7 +1,7 @@
-const { auth } = require('google-auth-library');
-const creds: JSON = require('../resources/google-sheet-credentials.json');
+import {auth} from 'google-auth-library';
+// import creds from '../resources/google-sheet-credentials.json';
 
-
+const creds = require('../resources/google-sheet-credentials.json')
 /** Esta línea se puede usar para reemplazar variables de entorno*/
 // const keysEnvVar = process.env['CREDS']
 const keysEnvVar = creds
@@ -15,9 +15,9 @@ const keys = creds;
 
 async function main(){
     const client = auth.fromJSON(keys);
-    client.scopes = ['https://www.googleapis.com/auth/spreadsheets'];
+    const url:string = 'https://www.googleapis.com/auth/spreadsheets';
     const sheetId = '1xNOKicQ7FvnfvP11wvyeInsPK2y2Alfa4hscZ5ZwV48';
-    const res = await client.request({sheetId});
+    const res = await client.request({url});
     console.log(res.data);
 }
 
