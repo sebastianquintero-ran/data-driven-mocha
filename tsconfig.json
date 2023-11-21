@@ -1,28 +1,17 @@
 {
   "compilerOptions": {
-    "lib": [
-      "esnext"
-    ],
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "es6",
+    "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true
-  },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
-
+    "jsx": "react"
   },
   "include": [
     "src/**/*.ts",
     "test/**/*.ts",
     "src/**/*.tsx",
     "test/**/*.tsx",
-    "src/__test__/setupTest.js",
+    "src/__test__/setupTest.ts",
     "src/__test__/App.test.jsx"
   ],
   "exclude": [
